@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identifier Content Injector</title>
+    <!-- Load Tailwind CSS from CDN for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom CSS to ensure the body covers the full viewport and uses the Inter font */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Full height of the viewport */
+            margin: 0;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main container card: centered, responsive, with shadow and spacing -->
+    <div class="w-full max-w-md p-6 sm:p-8 bg-white shadow-2xl rounded-xl space-y-6">
+        <h1 class="text-3xl font-extrabold text-center text-gray-800 tracking-tight">
+            Dynamically Set Content
+        </h1>
+        <p class="text-sm text-gray-500 text-center">
+            The text below is inserted using JavaScript, targeting the specified ID and class.
+        </p>
+
+        <!-- Element 1: Identified by ID "anas789" -->
+        <div
+            id="anas789"
+            class="p-5 bg-blue-50 border-2 border-blue-200 text-blue-700 font-mono text-xl font-bold text-center rounded-lg shadow-inner transition duration-300 hover:bg-blue-100 cursor-default"
+        >
+            <!-- Content will be set here by JS (YUWJDDA) -->
+            Loading ID content...
+        </div>
+
+        <!-- Element 2: Identified by Class "anas345" -->
+        <div
+            class="anas345 p-5 bg-pink-50 border-2 border-pink-200 text-pink-700 font-mono text-xl font-bold text-center rounded-lg shadow-inner transition duration-300 hover:bg-pink-100 cursor-default"
+        >
+            <!-- Content will be set here by JS (ZUOWEHS) -->
+            Loading Class content...
+        </div>
+
+    </div>
+
+    <!-- JavaScript to select elements and set their content -->
+    <script>
+        /**
+         * Wait for the entire HTML document to be parsed before running the script.
+         */
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Target the element by its unique ID: 'anas789'
+            const elementById = document.getElementById('anas789');
+            const content1 = 'YUWJDDA';
+
+            if (elementById) {
+                // Set the required text
+                elementById.textContent = content1;
+            } else {
+                console.error("Error: Element with ID 'anas789' not found.");
+            }
+
+            // 2. Target the element by its class: 'anas345'
+            // querySelector() retrieves the first element matching the class.
+            const elementByClass = document.querySelector('.anas345');
+            const content2 = 'ZUOWEHS';
+
+            if (elementByClass) {
+                // Set the required text
+                elementByClass.textContent = content2;
+            } else {
+                console.error("Error: Element with class 'anas345' not found.");
+            }
+        });
+    </script>
+</body>
+</html>
